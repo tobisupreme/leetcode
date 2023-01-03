@@ -32,7 +32,6 @@ var canConstruct = function (ransomNote, magazine) {
    * If it's presence in magazineCount is greater than 0
    * subtract 1 from the value of the count
    * Else, return false
-   * return true
    */
   for (let i = 0; i < ransomNote.split('').length; i++) {
     if (magazineCount[ransomNote.split('')[i]] > 0) {
@@ -43,7 +42,6 @@ var canConstruct = function (ransomNote, magazine) {
   }
 
   /**
-   * Else, return false
    * return true
    */
   return true
