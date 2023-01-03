@@ -5,14 +5,16 @@
 var productExceptSelf = function (nums) {
   const output = []
 
+  let prefixVal = 1
   for (let i = 0; i < nums.length; i++) {
-    let product = 1
-    for (let j = 0; j < nums.length; j++) {
-      if (j === i) continue
-      product *= nums[j]
-    }
+    output[i] = prefixVal
+    prefixVal *= nums[i]
+  }
 
-    output.push(product)
+  let postfixVal = 1
+  for (let i = output.length - 1; i >= 0; i--) {
+    output[i] *= postfixVal
+    postfixVal *= nums[i]
   }
 
   return output
